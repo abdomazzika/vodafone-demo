@@ -1,0 +1,17 @@
+---
+- hosts: prod-server
+  vars:
+    http_port: 3000
+    image_name: abdomazzika/vodafone-demo
+  tasks:
+    - name: run kill all script
+      script: ./../scripts/kill_all.sh {{ image_name }}
+
+    - name: login to docker registry
+      shell: "docker login -u abdomazzika -p newmusicboy1"
+
+    - name: pull the latest app image
+      shell: "docker pull {{ image_name }}"
+
+    -name: run the container and start app
+     shell: "docker run -id -p {{ http_port }}:3000 {{ image_name }}"
