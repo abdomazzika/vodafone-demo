@@ -3,13 +3,13 @@
   remote_user: ubuntu
   vars:
     http_port: 80
-    image_name: myregistrydomain.com/vodafone-demo
+    image_name: www.myregistrydomain.com/vodafone-demo
   tasks:
     - name: run kill all script
       script: ./../scripts/kill_all.sh {{ image_name }}
 
     - name: login to docker registry
-      shell: "docker login https://myregistrydomain.com -u admin -p admin"
+      shell: "docker login https://www.myregistrydomain.com -u admin -p admin"
 
     - name: pull the latest app image
       shell: "docker pull {{ image_name }}"
