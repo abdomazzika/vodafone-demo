@@ -1,15 +1,15 @@
 ---
-- hosts: prod-server
+- hosts: aws-server
   remote_user: ubuntu
   vars:
-    http_port: 80
-    image_name: myregistrydomain.com/vodafone-demo
+    http_port: 3000
+    image_name: abdomazzika/vodafone-demo
   tasks:
     - name: run kill all script
       script: ./../scripts/kill_all.sh {{ image_name }}
 
     - name: login to docker registry
-      shell: "docker login https://myregistrydomain.com -u admin -p admin"
+      shell: "docker login -u abdomazzika -p newmusicboy1"
 
     - name: pull the latest app image
       shell: "docker pull {{ image_name }}"
