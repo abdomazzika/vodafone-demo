@@ -1,1 +1,1 @@
-aws-server ansible_ssh_host=ubuntu@ec2-54-191-231-130.us-west-2.compute.amazonaws.com ansible_ssh_user=ubuntu ansible_ssh_private_key_file=./prod.pem 
+aws-server ansible_ssh_host=ubuntu@ec2-54-191-231-130.us-west-2.compute.amazonaws.com ansible_ssh_user=ubuntu ansible_ssh_private_key_file=./../prod.pem 
