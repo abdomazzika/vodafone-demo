@@ -4,12 +4,14 @@
   vars:
     http_port: 3000
     image_name: abdomazzika/vodafone-demo
+    docker_hub_user: abdomazzika
+    docker_hub_passwd: newmusicboy1
   tasks:
     - name: run kill all script
       script: ./../scripts/kill_all.sh {{ image_name }}
 
     - name: login to docker registry
-      shell: "docker login -u abdomazzika -p newmusicboy1"
+      shell: "docker login -u {{ docker_hub_user }} -p {{ docker_hub_passwd }}"
 
     - name: pull the latest app image
       shell: "docker pull {{ image_name }}"
