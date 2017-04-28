@@ -1,0 +1,16 @@
+github
+______
+test ssh: ssh -T git@github.com
+Go to Manage Jenkins and then Configure System
+In the Github section choose Add Github Server
+Add credentials (your Github token -> (github) -> settings -> personal token -> generate new) and click Save
+API URL: https://api.github.com
+jenkins hook url: http://jenkins_url/github-weebhook/
+
+docker
+_______
+
+name: docker-agent
+image: benhall/dind-jenkins-agent
+lable: docker-agent
+container-settings -> volumes : /var/run/docker.sock:/var/run/docker.sock
